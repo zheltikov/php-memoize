@@ -1,0 +1,71 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "91e1798e7b1742c69634c29ba4385f62",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "nazar-pc/phpt-tests-runner",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nazar-pc/phpt-tests-runner.git",
+                "reference": "ffed273f19b3adf4a899764dd00a746297cb1fa4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nazar-pc/phpt-tests-runner/zipball/ffed273f19b3adf4a899764dd00a746297cb1fa4",
+                "reference": "ffed273f19b3adf4a899764dd00a746297cb1fa4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "bin": [
+                "bin/phpt-tests-runner"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "0BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Nazar Mokrynskyi",
+                    "email": "nazar@mokrynskyi.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Runner for PHPT tests (with few differences comparing to original PHPT format)",
+            "homepage": "https://github.com/nazar-pc/phpt-tests-runner",
+            "keywords": [
+                "phpt",
+                "test",
+                "testing"
+            ],
+            "support": {
+                "issues": "https://github.com/nazar-pc/phpt-tests-runner/issues",
+                "source": "https://github.com/nazar-pc/phpt-tests-runner/tree/1.4.1"
+            },
+            "time": "2018-01-30T07:48:04+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.4"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

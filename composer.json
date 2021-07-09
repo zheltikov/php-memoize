@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "name": "zheltikov/php-memoize",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Zheltikov\\Memoize\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.4"
+  },
+  "require-dev": {
+    "nazar-pc/phpt-tests-runner": "^1.4"
+  },
+  "authors": [
+    {
+      "name": "Max Zheltikov",
+      "homepage": "https://github.com/zheltikov"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "phpt-tests-runner tests/"
+  }
+}
