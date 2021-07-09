@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73992b081a7cf10d3bcf7c24f1efdc9a",
+    "content-hash": "f8ef18dfd80108bc0a1df77eb0b1336e",
     "packages": [
         {
             "name": "zheltikov/php-invariant",
