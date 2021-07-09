@@ -5,7 +5,10 @@
   "autoload": {
     "psr-4": {
       "Zheltikov\\Memoize\\": "src/"
-    }
+    },
+	"files": [
+		"src/functions.php"
+	]
   },
   "require": {
     "php": "^7.4"
