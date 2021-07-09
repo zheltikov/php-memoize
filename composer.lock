@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "015d16ae70fe738ba042be3e9f383928",
-    "packages": [],
+    "content-hash": "f8ef18dfd80108bc0a1df77eb0b1336e",
+    "packages": [
+        {
+            "name": "zheltikov/php-invariant",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zheltikov/php-invariant.git",
+                "reference": "1013020ee2babbcdfbb8742ab3033a6105888612"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/1013020ee2babbcdfbb8742ab3033a6105888612",
+                "reference": "1013020ee2babbcdfbb8742ab3033a6105888612",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4"
+            },
+            "require-dev": {
+                "nazar-pc/phpt-tests-runner": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zheltikov\\Invariant\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Zheltikov",
+                    "homepage": "https://github.com/zheltikov"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/zheltikov/php-invariant/issues",
+                "source": "https://github.com/zheltikov/php-invariant/tree/1.0.0"
+            },
+            "time": "2021-07-09T18:11:44+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "nazar-pc/phpt-tests-runner",
