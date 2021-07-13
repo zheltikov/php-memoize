@@ -32,7 +32,7 @@ final class Config
     /**
      * @param string|null $hash_algo
      * @return void
-     * @throws \Zheltikov\Invariant\InvariantException
+     * @throws \Zheltikov\Exceptions\InvariantException
      */
 	public static function setHashAlgo(?string $hash_algo = null): void
 	{
