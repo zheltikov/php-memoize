@@ -7,21 +7,64 @@
     "content-hash": "f8ef18dfd80108bc0a1df77eb0b1336e",
     "packages": [
         {
-            "name": "zheltikov/php-invariant",
+            "name": "zheltikov/php-exceptions",
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zheltikov/php-invariant.git",
-                "reference": "1013020ee2babbcdfbb8742ab3033a6105888612"
+                "url": "https://github.com/zheltikov/php-exceptions.git",
+                "reference": "b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/1013020ee2babbcdfbb8742ab3033a6105888612",
-                "reference": "1013020ee2babbcdfbb8742ab3033a6105888612",
+                "url": "https://api.github.com/repos/zheltikov/php-exceptions/zipball/b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1",
+                "reference": "b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4"
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "nazar-pc/phpt-tests-runner": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zheltikov\\Exceptions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Zheltikov",
+                    "homepage": "https://github.com/zheltikov"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/zheltikov/php-exceptions/issues",
+                "source": "https://github.com/zheltikov/php-exceptions/tree/1.0.0"
+            },
+            "time": "2021-07-13T09:24:39+00:00"
+        },
+        {
+            "name": "zheltikov/php-invariant",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zheltikov/php-invariant.git",
+                "reference": "c43ae925766ac3d4278650cbe010751377c79f4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/c43ae925766ac3d4278650cbe010751377c79f4d",
+                "reference": "c43ae925766ac3d4278650cbe010751377c79f4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "zheltikov/php-exceptions": "^1.0"
             },
             "require-dev": {
                 "nazar-pc/phpt-tests-runner": "^1.4"
@@ -47,9 +90,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zheltikov/php-invariant/issues",
-                "source": "https://github.com/zheltikov/php-invariant/tree/1.0.0"
+                "source": "https://github.com/zheltikov/php-invariant/tree/1.1.0"
             },
-            "time": "2021-07-09T18:11:44+00:00"
+            "time": "2021-07-13T09:41:35+00:00"
         }
     ],
     "packages-dev": [
