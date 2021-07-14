@@ -77,12 +77,12 @@ Changing the used algorithm will clear the cache of all already existing memoize
 
 - [x] Wrapper function
 - [x] Configurable hashing algorithm for cache
-- [ ] Class Method memoization helper function
-- [ ] Class Method memoization helper function with LSB (Late Static Binding)
+- [X] Class Method memoization helper function
+- [X] Class Method memoization helper function with LSB (Late Static Binding)
 - [ ] Configurable serialization algorithm for cache
 - [ ] Configurable TTL (time-to-live) functionality
-- [ ] Instance Memoization Trait
-- [ ] Static Memoization Trait
+- [X] Instance Memoization Trait
+- [X] Static Memoization Trait
 - [ ] In-function wrapper interface
 - [ ] Hard-reset of all or specific caches
 - [ ] Inter-process caching in Redis
