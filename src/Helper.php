@@ -12,9 +12,9 @@ trait Helper
      * @param callable|null $static
      * @param callable $fn
      * @param ...$arguments
-     * @return callable
+     * @return mixed
      */
-    public static function memoize(?callable &$static, callable $fn, ...$arguments): callable
+    public static function memoize(?callable &$static, callable $fn, ...$arguments) // : mixed
     {
         if ($static === null) {
             $static = wrap($fn);
@@ -28,9 +28,9 @@ trait Helper
      * @param callable|null $static
      * @param callable $fn
      * @param ...$arguments
-     * @return callable
+     * @return mixed
      */
-    public static function memoizeLSB(string $classname, ?callable &$static, callable $fn, ...$arguments): callable
+    public static function memoizeLSB(string $classname, ?callable &$static, callable $fn, ...$arguments) // : mixed
     {
         if ($static === null) {
             $static = wrap(
