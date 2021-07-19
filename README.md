@@ -85,5 +85,5 @@ Config::setKeyGenerators(
 - [X] Static Memoization Trait
 - [ ] In-function wrapper interface
 - [X] Hard-reset of all or specific caches
-- [ ] Inter-process caching in Redis
+- [X] Inter-process caching in Redis. See: <https://github.com/zheltikov/php-memoize-redis>
 - [ ] Inter-process caching in MySQL/MariaDB

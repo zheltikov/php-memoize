@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "zheltikov/php-memoize",
   "type": "library",
   "autoload": {
@@ -16,6 +16,9 @@
   },
   "require-dev": {
     "nazar-pc/phpt-tests-runner": "^1.4"
+  },
+  "suggest": {
+    "zheltikov/php-memoize-redis": "An inter-process cache backed by Redis."
   },
   "authors": [
     {
