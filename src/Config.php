@@ -6,56 +6,53 @@ use function Zheltikov\Invariant\{invariant, invariant_violation};
 
 final class Config
 {
-	/**
-	 * @var string|null
-	 */
-	private static ?string $hash_algo = null;
-
     /**
      * @var \Zheltikov\Memoize\MemoizedCallable[]
      */
     private static array $memoized_callables = [];
 
-	private function __construct()
-	{
-	}
+    private function __construct()
+    {
+    }
 
-	/**
-	 * @return string
-	 */
-	public static function getHashAlgo(): string
-	{
-		if (self::$hash_algo === null) {
-			// FIXME: the md5 hash algo may have collisions but for now, it'll suffice
-			// By default we use the md5 hashing algorithm
-			self::$hash_algo = 'md5';
-		}
-
-		return self::$hash_algo;
-	}
+    // -------------------------------------------------------------------------
 
     /**
-     * @param string|null $hash_algo
-     * @return void
-     * @throws \Zheltikov\Exceptions\InvariantException
+     * @param \Zheltikov\Memoize\KeyGenerator $generator
      */
-	public static function setHashAlgo(?string $hash_algo = null): void
-	{
-		if ($hash_algo === null) {
-			self::$hash_algo = null;
-			self::setHashAlgoForMemoizedCallables();
-			return;
-		}
+    public static function setKeyGenerators(KeyGenerator $generator): void
+    {
+        foreach (self::$memoized_callables as $callable) {
+            $callable->setKeyGenerator($generator);
+        }
+    }
 
-		invariant(
-		    in_array($hash_algo, hash_algos(), true),
-            'Supplied value %s must be valid hashing algorithm',
-            $hash_algo
-        );
+    /**
+     * @param \Zheltikov\Memoize\Cache $cache
+     */
+    public static function setCaches(Cache $cache): void
+    {
+        foreach (self::$memoized_callables as $callable) {
+            $callable->setCache($cache);
+        }
+    }
 
-		self::$hash_algo = $hash_algo;
-        self::setHashAlgoForMemoizedCallables();
-	}
+    public static function clearCaches(): void
+    {
+        foreach (self::$memoized_callables as $callable) {
+            $callable->getCache()->clear();
+        }
+    }
+
+    /**
+     * @return \Zheltikov\Memoize\MemoizedCallable[]
+     */
+    public static function getMemoizedCallables(): array
+    {
+        return self::$memoized_callables;
+    }
+
+    // -------------------------------------------------------------------------
 
     /**
      * @param \Zheltikov\Memoize\MemoizedCallable $callable
@@ -86,19 +83,5 @@ final class Config
         }
 
         invariant_violation('Memoized callable not registered: %s', $callable);
-    }
-
-    private static function setHashAlgoForMemoizedCallables(): void
-    {
-        foreach (self::$memoized_callables as $callable) {
-            $callable->setHashAlgo(self::getHashAlgo());
-        }
-    }
-
-    private static function clearCacheForMemoizedCallables(): void
-    {
-        foreach (self::$memoized_callables as $callable) {
-            $callable->clearCache();
-        }
     }
 }
