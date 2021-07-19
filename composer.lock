@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d864ef9b8e1b639fd1526b425ea62df9",
+    "content-hash": "922683046242a5c14576187139a6582f",
     "packages": [
         {
             "name": "zheltikov/php-exceptions",
@@ -50,26 +50,27 @@
         },
         {
             "name": "zheltikov/php-invariant",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zheltikov/php-invariant.git",
-                "reference": "eb974430797e135c5156b878e5601a5ef3025d2b"
+                "reference": "ef265ac63a8a2f85a3f259e745f2334dffdccf63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/eb974430797e135c5156b878e5601a5ef3025d2b",
-                "reference": "eb974430797e135c5156b878e5601a5ef3025d2b",
+                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/ef265ac63a8a2f85a3f259e745f2334dffdccf63",
+                "reference": "ef265ac63a8a2f85a3f259e745f2334dffdccf63",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
                 "php": "^7.4",
-                "zheltikov/php-exceptions": "^1.0",
-                "zheltikov/php-type-assert": "^1.0"
+                "zheltikov/php-exceptions": "^1.0"
             },
             "require-dev": {
                 "nazar-pc/phpt-tests-runner": "^1.4"
+            },
+            "suggest": {
+                "zheltikov/php-type-assert": "Provides type checking/assertion functionality."
             },
             "type": "library",
             "autoload": {
@@ -92,56 +93,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zheltikov/php-invariant/issues",
-                "source": "https://github.com/zheltikov/php-invariant/tree/1.2.1"
+                "source": "https://github.com/zheltikov/php-invariant/tree/1.2.2"
             },
-            "time": "2021-07-14T15:30:22+00:00"
-        },
-        {
-            "name": "zheltikov/php-type-assert",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zheltikov/php-type-assert.git",
-                "reference": "5e3d72b852c91826b9af0ca3c10e83f6f04456eb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-type-assert/zipball/5e3d72b852c91826b9af0ca3c10e83f6f04456eb",
-                "reference": "5e3d72b852c91826b9af0ca3c10e83f6f04456eb",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3",
-                "zheltikov/php-exceptions": "^1.0",
-                "zheltikov/php-invariant": "^1.1"
-            },
-            "require-dev": {
-                "nazar-pc/phpt-tests-runner": "^1.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Zheltikov\\TypeAssert\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Max Zheltikov",
-                    "homepage": "https://github.com/zheltikov"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/zheltikov/php-type-assert/issues",
-                "source": "https://github.com/zheltikov/php-type-assert/tree/1.0.2"
-            },
-            "time": "2021-07-14T10:27:58+00:00"
+            "time": "2021-07-19T08:58:03+00:00"
         }
     ],
     "packages-dev": [
