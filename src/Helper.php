@@ -9,33 +9,39 @@ namespace Zheltikov\Memoize;
 trait Helper
 {
     /**
-     * @param callable|null $static
+     * @param MemoizedCallable|null $static
      * @param callable $fn
      * @param ...$arguments
      * @return mixed
+     * @throws \Zheltikov\Exceptions\InvariantException
      */
-    public static function memoize(?callable &$static, callable $fn, ...$arguments) // : mixed
+    public static function memoize(?MemoizedCallable &$static, callable $fn, ...$arguments)
     {
         if ($static === null) {
             $static = wrap($fn);
         }
 
-        return $static(...$arguments);
+        return $static->call(...$arguments);
     }
 
     /**
      * @param string $classname
-     * @param callable|null $static
+     * @param MemoizedCallable|null $static
      * @param callable $fn
      * @param ...$arguments
      * @return mixed
+     * @throws \Zheltikov\Exceptions\InvariantException
      */
-    public static function memoizeLSB(string $classname, ?callable &$static, callable $fn, ...$arguments) // : mixed
-    {
+    public static function memoizeLSB(
+        string $classname,
+        ?MemoizedCallable &$static,
+        callable $fn,
+        ...$arguments
+    ) {
         if ($static === null) {
             $static = wrap(
-                function () use ($fn): callable {
-                    /** @var callable|null $fn2 */
+                function () use ($fn): MemoizedCallable {
+                    /** @var MemoizedCallable|null $fn2 */
                     static $fn2 = null;
 
                     if ($fn2 === null) {
@@ -47,6 +53,6 @@ trait Helper
             );
         }
 
-        return $static($classname)(...$arguments);
+        return $static->call($classname)->call(...$arguments);
     }
 }

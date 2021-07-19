@@ -2,7 +2,7 @@
 
 namespace Zheltikov\Memoize;
 
-use function Zheltikov\Invariant\{invariant, invariant_violation};
+use function Zheltikov\Invariant\invariant_violation;
 
 final class Config
 {
@@ -22,7 +22,7 @@ final class Config
      */
     public static function setKeyGenerators(KeyGenerator $generator): void
     {
-        foreach (self::$memoized_callables as $callable) {
+        foreach (self::getMemoizedCallables() as $callable) {
             $callable->setKeyGenerator($generator);
         }
     }
@@ -32,14 +32,14 @@ final class Config
      */
     public static function setCaches(Cache $cache): void
     {
-        foreach (self::$memoized_callables as $callable) {
+        foreach (self::getMemoizedCallables() as $callable) {
             $callable->setCache($cache);
         }
     }
 
     public static function clearCaches(): void
     {
-        foreach (self::$memoized_callables as $callable) {
+        foreach (self::getMemoizedCallables() as $callable) {
             $callable->getCache()->clear();
         }
     }
@@ -60,7 +60,7 @@ final class Config
      */
     public static function registerMemoizedCallable(MemoizedCallable $callable): void
     {
-        foreach (self::$memoized_callables as $c) {
+        foreach (self::getMemoizedCallables() as $c) {
             if ($c === $callable) {
                 invariant_violation('Memoized callable already registered: %s', $callable);
             }
@@ -75,7 +75,7 @@ final class Config
      */
     public static function unregisterMemoizedCallable(MemoizedCallable $callable): void
     {
-        foreach (self::$memoized_callables as $key => $c) {
+        foreach (self::getMemoizedCallables() as $key => $c) {
             if ($c === $callable) {
                 unset(self::$memoized_callables[$key]);
                 return;
