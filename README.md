@@ -27,18 +27,18 @@ function my_expensive_function(string $who): string
     // Just for illustrative purposes we just sleep here,
     // but here could be a database fetch, or an expensive
     // computation.
-    sleep(10);
+    sleep(5);
     return 'Hello ' . $who . '!';
 }
 
-my_expensive_function('World'); // Runs in 2 seconds
+my_expensive_function('World'); // Runs in 5 seconds
 
 $memoized = wrap('my_expensive_function');
 
-$memoized('World'); // 2 seconds
+$memoized('World'); // 5 seconds
 $memoized('World'); // milliseconds
 
-$memoized('Everyone'); // 2 seconds
+$memoized('Everyone'); // 5 seconds
 $memoized('Everyone'); // milliseconds
 
 ```
@@ -62,8 +62,10 @@ Config::getHashAlgo();
 // Let's set the hash algo to something with less collisions
 Config::setHashAlgo('whirlpool');
 
-// We can reset the hash algo to the default
+// We can reset the hash algo to the default with
 Config::setHashAlgo(null);
+// or
+Config::setHashAlgo();
 
 // If we try to set the hash algo to some algorithm that is
 // not in the output of `hash_algos`, an Exception is thrown
