@@ -23,14 +23,15 @@ function timer(callable $fn): callable
 	};
 }
 
-$wrapped = timer(wrap('my_expensive_function'));
+$inner = wrap('my_expensive_function');
+$wrapped = timer($inner);
 $time = $wrapped(10);
 var_dump((int) $time);
 
 $time2 = $wrapped(10);
 var_dump($time2 < $time);
 
-Config::setHashAlgo('whirlpool');
+$inner->getKeyGenerator()->setHashAlgo('whirlpool');
 
 $time3 = $wrapped(10);
 var_dump((int) $time3);

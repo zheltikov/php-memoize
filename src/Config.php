@@ -2,51 +2,86 @@
 
 namespace Zheltikov\Memoize;
 
-use function Zheltikov\Invariant\invariant;
+use function Zheltikov\Invariant\invariant_violation;
 
 final class Config
 {
-	/**
-	 * @var string|null
-	 */
-	private static ?string $hash_algo = null;
+    /**
+     * @var \Zheltikov\Memoize\MemoizedCallable[]
+     */
+    private static array $memoized_callables = [];
 
-	private function __construct()
-	{
-	}
+    private function __construct()
+    {
+    }
 
-	/**
-	 * @return string
-	 */
-	public static function getHashAlgo(): string
-	{
-		if (self::$hash_algo === null) {
-			// FIXME: the md5 hash algo may have collisions but for now, it'll suffice
-			// By default we use the md5 hashing algorithm
-			self::$hash_algo = 'md5';
-		}
-
-		return self::$hash_algo;
-	}
+    // -------------------------------------------------------------------------
 
     /**
-     * @param string|null $hash_algo
-     * @return void
+     * @param \Zheltikov\Memoize\KeyGenerator $generator
+     */
+    public static function setKeyGenerators(KeyGenerator $generator): void
+    {
+        foreach (self::getMemoizedCallables() as $callable) {
+            $callable->setKeyGenerator($generator);
+        }
+    }
+
+    /**
+     * @param \Zheltikov\Memoize\Cache $cache
+     */
+    public static function setCaches(Cache $cache): void
+    {
+        foreach (self::getMemoizedCallables() as $callable) {
+            $callable->setCache($cache);
+        }
+    }
+
+    public static function clearCaches(): void
+    {
+        foreach (self::getMemoizedCallables() as $callable) {
+            $callable->getCache()->clear();
+        }
+    }
+
+    /**
+     * @return \Zheltikov\Memoize\MemoizedCallable[]
+     */
+    public static function getMemoizedCallables(): array
+    {
+        return self::$memoized_callables;
+    }
+
+    // -------------------------------------------------------------------------
+
+    /**
+     * @param \Zheltikov\Memoize\MemoizedCallable $callable
      * @throws \Zheltikov\Exceptions\InvariantException
      */
-	public static function setHashAlgo(?string $hash_algo = null): void
-	{
-		if ($hash_algo === null) {
-			self::$hash_algo = null;
-			return;
-		}
+    public static function registerMemoizedCallable(MemoizedCallable $callable): void
+    {
+        foreach (self::getMemoizedCallables() as $c) {
+            if ($c === $callable) {
+                invariant_violation('Memoized callable already registered: %s', $callable);
+            }
+        }
 
-		invariant(
-		    in_array($hash_algo, hash_algos(), true),
-            'Supplied value %s must be valid hashing algorithm',
-            $hash_algo
-        );
+        self::$memoized_callables[] = $callable;
+    }
 
-		self::$hash_algo = $hash_algo;
-	}
+    /**
+     * @param \Zheltikov\Memoize\MemoizedCallable $callable
+     * @throws \Zheltikov\Exceptions\InvariantException
+     */
+    public static function unregisterMemoizedCallable(MemoizedCallable $callable): void
+    {
+        foreach (self::getMemoizedCallables() as $key => $c) {
+            if ($c === $callable) {
+                unset(self::$memoized_callables[$key]);
+                return;
+            }
+        }
+
+        invariant_violation('Memoized callable not registered: %s', $callable);
+    }
 }
