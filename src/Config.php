@@ -18,6 +18,7 @@ final class Config
     // -------------------------------------------------------------------------
 
     /**
+     * FIXME: this method isn't really useful, right? :)
      * @param \Zheltikov\Memoize\KeyGenerator $generator
      */
     public static function setKeyGenerators(KeyGenerator $generator): void
@@ -28,6 +29,7 @@ final class Config
     }
 
     /**
+     * FIXME: this method isn't really useful, right? :)
      * @param \Zheltikov\Memoize\Cache $cache
      */
     public static function setCaches(Cache $cache): void
@@ -37,6 +39,9 @@ final class Config
         }
     }
 
+    /**
+     * FIXME: this method isn't really useful, right? :)
+     */
     public static function clearCaches(): void
     {
         foreach (self::getMemoizedCallables() as $callable) {
@@ -45,6 +50,7 @@ final class Config
     }
 
     /**
+     * FIXME: this method isn't really useful, right? :)
      * @return \Zheltikov\Memoize\MemoizedCallable[]
      */
     public static function getMemoizedCallables(): array
@@ -60,6 +66,9 @@ final class Config
      */
     public static function registerMemoizedCallable(MemoizedCallable $callable): void
     {
+        // TODO: looping over all registered callables may be slow. Optimize this. (minor)
+        // TODO: maybe there is a way to uniquely identify a callable?
+        // TODO: if this check is done via key indexing, it would be faster
         foreach (self::getMemoizedCallables() as $c) {
             if ($c === $callable) {
                 invariant_violation('Memoized callable already registered: %s', $callable);
@@ -75,6 +84,7 @@ final class Config
      */
     public static function unregisterMemoizedCallable(MemoizedCallable $callable): void
     {
+        // TODO: looping over all registered callables may be slow. Optimize this. (minor)
         foreach (self::getMemoizedCallables() as $key => $c) {
             if ($c === $callable) {
                 unset(self::$memoized_callables[$key]);

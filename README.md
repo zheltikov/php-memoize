@@ -83,7 +83,7 @@ Config::setKeyGenerators(
 - [ ] Configurable TTL (time-to-live) functionality
 - [X] Instance Memoization Trait
 - [X] Static Memoization Trait
-- [ ] In-function wrapper interface
+- [ ] <del>In-function wrapper interface</del>
 - [X] Hard-reset of all or specific caches
 - [X] Inter-process caching in Redis. See: <https://github.com/zheltikov/php-memoize-redis>
 - [ ] Inter-process caching in MySQL/MariaDB

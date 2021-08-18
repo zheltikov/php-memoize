@@ -5,6 +5,14 @@ namespace Zheltikov\Memoize;
 use function Zheltikov\Invariant\invariant;
 
 /**
+ * This is the default key generator implementation.
+ *
+ * It is very simple, and suitable for most situations.
+ * It just serializes the arguments and hashes the result.
+ * But consider this an implementation detail.
+ *
+ * If you need some other custom key generation logic, you can always implement your own!
+ *
  * Class DefaultKeyGenerator
  * @package Zheltikov\Memoize
  */

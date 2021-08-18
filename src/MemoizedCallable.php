@@ -5,6 +5,8 @@ namespace Zheltikov\Memoize;
 use Closure;
 
 /**
+ * TODO: maybe add some hooks called on significant operations; this may be useful for logging (minor)
+ *
  * Class MemoizedCallable
  * @package Zheltikov\Memoize
  */

@@ -2,6 +2,18 @@
 
 namespace Zheltikov\Memoize;
 
+/**
+ * This is the default cache implementation.
+ *
+ * It is an in-memory (array) cache, thus, not very memory-efficient :(,
+ * but suitable for most cases.
+ * This cache data lives only during the current request.
+ *
+ * If you need an inter-process cache, see for example:
+ * https://github.com/zheltikov/php-memoize-redis
+ *
+ * ...or, implement your own!
+ */
 class DefaultCache implements Cache
 {
     /**
