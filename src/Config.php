@@ -4,6 +4,10 @@ namespace Zheltikov\Memoize;
 
 use function Zheltikov\Invariant\invariant_violation;
 
+/**
+ * FIXME: what is the difference between $memoized_callables and $wrap_storage?
+ * FIXME: try to combine them into one variable, to avoid duplication.
+ */
 final class Config
 {
     /**
