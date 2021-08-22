@@ -2,6 +2,8 @@
 
 namespace Zheltikov\Memoize;
 
+use function Zheltikov\Memoize\_Private\{caller_to_string, get_user_caller};
+
 /**
  * @param callable $fn The function to wrap into memoization.
  * @param Cache|null $cache The cache storage to use.
@@ -12,5 +14,11 @@ namespace Zheltikov\Memoize;
  */
 function wrap(callable $fn, ?Cache $cache = null, ?KeyGenerator $key_generator = null): MemoizedCallable
 {
-    return new MemoizedCallable($fn, $cache, $key_generator);
+    $caller = caller_to_string(get_user_caller());
+    $callable = Config::getWrapStorage($caller);
+    if ($callable === null) {
+        $callable = new MemoizedCallable($fn, $cache, $key_generator);
+        Config::addWrapStorage($caller, $callable);
+    }
+    return $callable;
 }

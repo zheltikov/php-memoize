@@ -11,11 +11,36 @@ final class Config
      */
     private static array $memoized_callables = [];
 
+    /**
+     * @var \Zheltikov\Memoize\MemoizedCallable[]
+     */
+    private static array $wrap_storage = [];
+
     private function __construct()
     {
     }
 
     // -------------------------------------------------------------------------
+
+    /**
+     * @param string $key
+     * @param \Zheltikov\Memoize\MemoizedCallable $callable
+     */
+    public static function addWrapStorage(string $key, MemoizedCallable $callable): void
+    {
+        self::$wrap_storage[$key] = $callable;
+    }
+
+    /**
+     * @param string $key
+     * @return \Zheltikov\Memoize\MemoizedCallable|null
+     */
+    public static function getWrapStorage(string $key): ?MemoizedCallable
+    {
+        return array_key_exists($key, self::$wrap_storage)
+            ? self::$wrap_storage[$key]
+            : null;
+    }
 
     /**
      * FIXME: this method isn't really useful, right? :)
