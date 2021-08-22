@@ -12,11 +12,9 @@ final class Config
     private static array $memoized_callables = [];
 
     /**
-     * TODO: make private
-     *
      * @var \Zheltikov\Memoize\MemoizedCallable[]
      */
-    public static array $wrap_storage = [];
+    private static array $wrap_storage = [];
 
     private function __construct()
     {
