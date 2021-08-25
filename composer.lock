@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b68ee70512b3fa82c4fb4dfa8d2c75c",
+    "content-hash": "cc0cc934f9a2c95583e7ce79089d767e",
     "packages": [
         {
             "name": "zheltikov/php-exceptions",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zheltikov/php-exceptions.git",
-                "reference": "b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1"
+                "reference": "3da69489187defcf6bc1b1fd949a0e61bf9c3bf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-exceptions/zipball/b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1",
-                "reference": "b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1",
+                "url": "https://api.github.com/repos/zheltikov/php-exceptions/zipball/3da69489187defcf6bc1b1fd949a0e61bf9c3bf2",
+                "reference": "3da69489187defcf6bc1b1fd949a0e61bf9c3bf2",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.3"
+                "php": ">=7.3"
             },
             "require-dev": {
                 "nazar-pc/phpt-tests-runner": "^1.4"
@@ -44,26 +44,26 @@
             ],
             "support": {
                 "issues": "https://github.com/zheltikov/php-exceptions/issues",
-                "source": "https://github.com/zheltikov/php-exceptions/tree/1.0.0"
+                "source": "https://github.com/zheltikov/php-exceptions/tree/1.0.1"
             },
-            "time": "2021-07-13T09:24:39+00:00"
+            "time": "2021-08-25T09:36:28+00:00"
         },
         {
             "name": "zheltikov/php-invariant",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zheltikov/php-invariant.git",
-                "reference": "ef265ac63a8a2f85a3f259e745f2334dffdccf63"
+                "reference": "8f946d0a00443a1eadf7d894838bdf2f948c0661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/ef265ac63a8a2f85a3f259e745f2334dffdccf63",
-                "reference": "ef265ac63a8a2f85a3f259e745f2334dffdccf63",
+                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/8f946d0a00443a1eadf7d894838bdf2f948c0661",
+                "reference": "8f946d0a00443a1eadf7d894838bdf2f948c0661",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4",
+                "php": ">=7.4",
                 "zheltikov/php-exceptions": "^1.0"
             },
             "require-dev": {
@@ -93,9 +93,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zheltikov/php-invariant/issues",
-                "source": "https://github.com/zheltikov/php-invariant/tree/1.2.2"
+                "source": "https://github.com/zheltikov/php-invariant/tree/1.2.3"
             },
-            "time": "2021-07-19T08:58:03+00:00"
+            "time": "2021-08-25T09:39:18+00:00"
         }
     ],
     "packages-dev": [
@@ -156,7 +156,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
