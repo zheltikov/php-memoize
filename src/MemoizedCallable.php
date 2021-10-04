@@ -67,7 +67,7 @@ class MemoizedCallable
      */
     public function call(...$args)
     {
-        $key = $this->getKeyGenerator()->generateKey($args);
+        $key = $this->getKeyGenerator()->generateKey(...$args);
 
         // There is no such parameter combo in the cache, compute the result and cache it
         if (!$this->getCache()->isset($key)) {
