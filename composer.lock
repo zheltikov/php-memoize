@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d864ef9b8e1b639fd1526b425ea62df9",
+    "content-hash": "472c60415801d3dced1f36e8ebd3f8e4",
     "packages": [
         {
             "name": "zheltikov/php-exceptions",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zheltikov/php-exceptions.git",
-                "reference": "b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1"
+                "reference": "3da69489187defcf6bc1b1fd949a0e61bf9c3bf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-exceptions/zipball/b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1",
-                "reference": "b346ae65c32144f741cfffa8e9e00eb7b1c4f3d1",
+                "url": "https://api.github.com/repos/zheltikov/php-exceptions/zipball/3da69489187defcf6bc1b1fd949a0e61bf9c3bf2",
+                "reference": "3da69489187defcf6bc1b1fd949a0e61bf9c3bf2",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.3"
+                "php": ">=7.3"
             },
             "require-dev": {
                 "nazar-pc/phpt-tests-runner": "^1.4"
@@ -44,32 +44,33 @@
             ],
             "support": {
                 "issues": "https://github.com/zheltikov/php-exceptions/issues",
-                "source": "https://github.com/zheltikov/php-exceptions/tree/1.0.0"
+                "source": "https://github.com/zheltikov/php-exceptions/tree/1.0.1"
             },
-            "time": "2021-07-13T09:24:39+00:00"
+            "time": "2021-08-25T09:36:28+00:00"
         },
         {
             "name": "zheltikov/php-invariant",
-            "version": "1.2.1",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zheltikov/php-invariant.git",
-                "reference": "eb974430797e135c5156b878e5601a5ef3025d2b"
+                "reference": "8f946d0a00443a1eadf7d894838bdf2f948c0661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/eb974430797e135c5156b878e5601a5ef3025d2b",
-                "reference": "eb974430797e135c5156b878e5601a5ef3025d2b",
+                "url": "https://api.github.com/repos/zheltikov/php-invariant/zipball/8f946d0a00443a1eadf7d894838bdf2f948c0661",
+                "reference": "8f946d0a00443a1eadf7d894838bdf2f948c0661",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "php": "^7.4",
-                "zheltikov/php-exceptions": "^1.0",
-                "zheltikov/php-type-assert": "^1.0"
+                "php": ">=7.4",
+                "zheltikov/php-exceptions": "^1.0"
             },
             "require-dev": {
                 "nazar-pc/phpt-tests-runner": "^1.4"
+            },
+            "suggest": {
+                "zheltikov/php-type-assert": "Provides type checking/assertion functionality."
             },
             "type": "library",
             "autoload": {
@@ -92,56 +93,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zheltikov/php-invariant/issues",
-                "source": "https://github.com/zheltikov/php-invariant/tree/1.2.1"
+                "source": "https://github.com/zheltikov/php-invariant/tree/1.2.3"
             },
-            "time": "2021-07-14T15:30:22+00:00"
-        },
-        {
-            "name": "zheltikov/php-type-assert",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zheltikov/php-type-assert.git",
-                "reference": "5e3d72b852c91826b9af0ca3c10e83f6f04456eb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zheltikov/php-type-assert/zipball/5e3d72b852c91826b9af0ca3c10e83f6f04456eb",
-                "reference": "5e3d72b852c91826b9af0ca3c10e83f6f04456eb",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3",
-                "zheltikov/php-exceptions": "^1.0",
-                "zheltikov/php-invariant": "^1.1"
-            },
-            "require-dev": {
-                "nazar-pc/phpt-tests-runner": "^1.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Zheltikov\\TypeAssert\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Max Zheltikov",
-                    "homepage": "https://github.com/zheltikov"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/zheltikov/php-type-assert/issues",
-                "source": "https://github.com/zheltikov/php-type-assert/tree/1.0.2"
-            },
-            "time": "2021-07-14T10:27:58+00:00"
+            "time": "2021-08-25T09:39:18+00:00"
         }
     ],
     "packages-dev": [
@@ -202,8 +156,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": ">=7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
