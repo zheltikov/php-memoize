@@ -24,29 +24,21 @@ trait Helper
     }
 
     /**
+     * For implementation details,
+     * @see https://wiki.php.net/rfc/static_variable_inheritance
+     *
      * @param string $classname
-     * @param callable|null $static
+     * @param array<class-string, callable> $static
      * @param callable $fn
-     * @param ...$arguments
+     * @param mixed ...$arguments
      * @return mixed
      */
-    public static function memoizeLSB(string $classname, ?callable &$static, callable $fn, ...$arguments) // : mixed
+    public static function memoizeLSB(string $classname, array &$static, callable $fn, ...$arguments)
     {
-        if ($static === null) {
-            $static = wrap(
-                function () use ($fn): callable {
-                    /** @var callable|null $fn2 */
-                    static $fn2 = null;
-
-                    if ($fn2 === null) {
-                        $fn2 = wrap($fn);
-                    }
-
-                    return $fn2;
-                }
-            );
+        if (!array_key_exists($classname, $static)) {
+            $static[$classname] = wrap($fn);
         }
 
-        return $static($classname)(...$arguments);
+        return $static[$classname](...$arguments);
     }
 }
