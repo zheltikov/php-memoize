@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "472c60415801d3dced1f36e8ebd3f8e4",
+    "content-hash": "d4654d7b3f316deca5a875825ca4a698",
     "packages": [
         {
             "name": "zheltikov/php-exceptions",
@@ -74,12 +74,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Zheltikov\\Invariant\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Zheltikov\\Invariant\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
